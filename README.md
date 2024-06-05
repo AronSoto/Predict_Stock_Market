@@ -41,4 +41,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 ### About Me
 You can find more of my projects on GitHub.
 
-Thank you for checking out my project!
+I'm Aron and thank you for checking out my project!
