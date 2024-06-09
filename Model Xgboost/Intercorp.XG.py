@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #Importing data in the country context(Perú)
 data = pd.read_csv('../Data/Data_Intercorp.csv')
 
-#Showing data a company (Intercorp)
+#Showing data a company
 data
 
 #Show the data visually (Gráficas)
