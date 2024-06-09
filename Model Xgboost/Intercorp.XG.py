@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('../Data/Data_Intercorp.csv')
 
 #Showing data a company
-data
+print(data)
 
 #Show the data visually (Gráficas)
 data['Close'].plot()
@@ -26,7 +26,7 @@ model.fit(train_data[features], train_data[target])
 
 #Make and show the predictions on the test data (Muestra)
 predictions = model.predict(test_data[features])
-print('Model Predictions: ')
+print('Model Predictions Intercorp: ')
 print(predictions)
 
 #Show the actual values (Mostrar)
