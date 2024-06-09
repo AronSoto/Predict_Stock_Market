@@ -78,7 +78,8 @@ print(predictions['Target'].value_counts()/predictions.shape[0])
 
 #----------------------------------------------------------------#
 
-horizons = [2, 5, 60, 250]
+#Mejorar la Presicion del Modelo
+horizons = [50, 100, 150, 200,250]
 new_predictors = []
 
 for horizon in horizons:
@@ -108,3 +109,5 @@ def predict(train, test, predictors, model):
 
 predictions = backtest(data, model, new_predictors)
 print(predictions['Predictions'].value_counts())
+
+print(precision_score(predictions['Target'], predictions['Predictions']))
