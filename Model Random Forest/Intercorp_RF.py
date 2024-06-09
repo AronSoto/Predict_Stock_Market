@@ -1,5 +1,4 @@
 import pandas as pd
-import xgboost as xgb
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score
