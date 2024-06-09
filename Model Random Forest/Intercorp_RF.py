@@ -4,43 +4,107 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score
 
-#Importing data in the country context(Perú)
+# Importar datos en el contexto del país (Perú)
 data = pd.read_csv('../Data/Data_Intercorp.csv')
 
-#Showing data a company
-data
+# Mostrar datos de la compañía
+print(data.head())
 
-#Show the data visually (Gráficas)
+# Mostrar los datos visualmente (Gráficas)
 data['Close'].plot()
+plt.show()
 
-#Show the data tomorrow for every time
+# Mostrar datos de mañana para cada tiempo
 data['Tomorrow'] = data['Close'].shift(-1)
 
-#Show a index for caracters if is more tomorrow
+# Crear un índice para caracteres si es más mañana
 data['Target'] = (data['Tomorrow'] > data['Close']).astype(int)
 
-#Show data
-data
+# Mostrar datos
+print(data.head())
 
-#Model RandomForest
+# Modelo RandomForest
 model = RandomForestClassifier(n_estimators=100, min_samples_split=100, random_state=1)
 
-#Training
+# División de datos
 train = data.iloc[:-100]
-test = data.iloc[:-100]
+test = data.iloc[-100:]
 
-#Data Using
+# Variables predictoras
 predictors = ['Close', 'Volume', 'Open', 'High', 'Low']
 model.fit(train[predictors], train['Target'])
-RandomForestClassifier(min_samples_split=100, random_state=1)
 
-#Metrics
+# Métricas
 preds = model.predict(test[predictors])
 preds = pd.Series(preds, index=test.index)
 
-#Accuracy Test
-precision_score(test['Target'], preds)
+# Precisión de la prueba
+print(precision_score(test['Target'], preds))
 
-#Prediction graphs
+# Gráficas de predicción
 combined = pd.concat([test['Target'], preds], axis=1)
 combined.plot()
+plt.show()
+
+#----------------------------------------------------------------#
+
+# Función de Retrospectiva
+def predict(train, test, predictors, model):
+    model.fit(train[predictors], train['Target'])
+    preds = model.predict(test[predictors])
+    preds = pd.Series(preds, index=test.index, name='Predictions')
+    combined = pd.concat([test['Target'], preds], axis=1)
+    return combined
+
+def backtest(docs, model, predictors, start=57, step=30):
+    all_predictions = []
+
+    for i in range(start, docs.shape[0], step):
+        train = docs.iloc[0:i].copy()
+        test = docs.iloc[i:(i+step)].copy()
+        predictions = predict(train, test, predictors, model)
+        all_predictions.append(predictions)
+    return pd.concat(all_predictions)
+
+# Ver las predicciones
+predictions = backtest(data, model, predictors)
+print(predictions['Predictions'].value_counts())
+
+# Nueva prueba de precisión
+print(precision_score(predictions['Target'], predictions['Predictions']))
+
+# Precisión para los valores bajos y altos
+print(predictions['Target'].value_counts()/predictions.shape[0])
+
+#----------------------------------------------------------------#
+
+horizons = [2, 5, 60, 250]
+new_predictors = []
+
+for horizon in horizons:
+    rolling_averages = data['Close'].rolling(window=horizon).mean()
+
+    ratio_column = f'Close_Ratio_{horizon}'
+    data[ratio_column] = data['Close'] / rolling_averages
+
+    trend_column = f'Trend_{horizon}'
+    data[trend_column] = data['Target'].shift(1).rolling(window=horizon).sum()
+
+    new_predictors += [ratio_column, trend_column]
+
+print(data.head())
+
+#----------------------------------------------------------------#
+
+# Nueva confianza del modelo
+model = RandomForestClassifier(n_estimators=200, min_samples_split=50, random_state=1)
+
+def predict(train, test, predictors, model):
+    model.fit(train[predictors], train['Target'])
+    preds = model.predict(test[predictors])
+    preds = pd.Series(preds, index=test.index, name='Predictions')
+    combined = pd.concat([test['Target'], preds], axis=1)
+    return combined
+
+predictions = backtest(data, model, new_predictors)
+print(predictions['Predictions'].value_counts())
