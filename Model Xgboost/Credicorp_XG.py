@@ -1,10 +1,9 @@
-#Importing all complements
 import pandas as pd
 import xgboost as xgb
 import matplotlib.pyplot as plt
 
 #Importing data in the country context(Perú)
-data = pd.read_csv('Data/IFS.csv')
+data = pd.read_csv('../Data/Data_Credicorp.csv')
 
 #Showing data a company (Intercorp)
 data
@@ -26,7 +25,7 @@ model.fit(train_data[features], train_data[target])
 
 #Make and show the predictions on the test data (Muestra)
 predictions = model.predict(test_data[features])
-print('Model Predictions: ')
+print('Model Predictions Credicorp: ')
 print(predictions)
 
 #Show the actual values (Mostrar)
