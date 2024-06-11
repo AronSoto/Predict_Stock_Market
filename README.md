@@ -35,8 +35,8 @@ pip install pandas xgboost matplotlib
 - Evaluation: Calculates and displays model accuracy.
 - Plotting: Plots actual closing prices and model predictions.
 
-### Contributions
-Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+> [!IMPORTANT]
+> Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ### About Me
 You can find more of my projects on GitHub.
