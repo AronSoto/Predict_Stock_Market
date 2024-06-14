@@ -1,6 +1,8 @@
 # Closing Price Prediction Project
 This project utilizes XGBoost to predict the closing prices of a specific company (Intercorp) using data from the country's context (Peru).
 
+Leave a ⭐ That would motivate me to improve this project.
+
 ## Description
 The main.py script performs the following tasks:
 
