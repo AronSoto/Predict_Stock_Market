@@ -34,14 +34,31 @@ You can install them using pip:
 pip install pandas xgboost matplotlib RandomForestClassifier
 ```
 
+Import dependencies
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+You also have to import the dependencies from sklearn:
+
+```
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import precision_score
+```
+
+<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="230">
+
 🌟 Features
-- Data Loading: Loads data from a CSV file.
-- Data Visualization: Graphically displays closing prices.
-- Data Splitting: Splits data into training and testing sets.
-- Modeling: Creates and trains a regression model using XGBoost.
-- Predictions: Makes and displays model predictions.
-- Evaluation: Calculates and displays model accuracy.
-- Plotting: Plots actual closing prices and model predictions.
+```
+Data Loading: Loads data from a CSV file.
+Data Visualization: Graphically displays closing prices.
+Data Splitting: Splits data into training and testing sets.
+Modeling: Creates and trains a regression models
+Predictions: Makes and displays model predictions.
+Evaluation: Calculates and displays model accuracy.
+Plotting: Plots actual closing prices and model predictions.
+```
 
 >[!IMPORTANT]
 >Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
