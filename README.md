@@ -46,20 +46,18 @@ You also have to import the dependencies from sklearn:
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score
 ```
+<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="50">
 
 ### 🌟 Features
 
-<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="150">
+- Data Preprocessing: Handles missing values and formats the data appropriately.
+- Feature Engineering: Extracts and creates new features to improve model performance.
+- Hyperparameter Tuning: Optimizes model parameters using techniques like grid search.
+- Cross-Validation: Implements cross-validation to ensure model robustness.
+- Model Saving: Saves the trained model for future use without retraining.
+- Logging: Provides detailed logs of the training process for better debugging and analysis.
+- Interactive Visualizations: Creates interactive plots for a more dynamic data exploration.
 
-```
-Data Preprocessing: Handles missing values and formats the data appropriately.
-Feature Engineering: Extracts and creates new features to improve model performance.
-Hyperparameter Tuning: Optimizes model parameters using techniques like grid search.
-Cross-Validation: Implements cross-validation to ensure model robustness.
-Model Saving: Saves the trained model for future use without retraining.
-Logging: Provides detailed logs of the training process for better debugging and analysis.
-Interactive Visualizations: Creates interactive plots for a more dynamic data exploration.
-```
 
 >[!IMPORTANT]
 >Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
