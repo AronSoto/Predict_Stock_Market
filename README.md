@@ -47,17 +47,18 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_score
 ```
 
-<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="230">
+### 🌟 Features
 
-🌟 Features
+<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="150">
+
 ```
-Data Loading: Loads data from a CSV file.
-Data Visualization: Graphically displays closing prices.
-Data Splitting: Splits data into training and testing sets.
-Modeling: Creates and trains a regression models
-Predictions: Makes and displays model predictions.
-Evaluation: Calculates and displays model accuracy.
-Plotting: Plots actual closing prices and model predictions.
+Data Preprocessing: Handles missing values and formats the data appropriately.
+Feature Engineering: Extracts and creates new features to improve model performance.
+Hyperparameter Tuning: Optimizes model parameters using techniques like grid search.
+Cross-Validation: Implements cross-validation to ensure model robustness.
+Model Saving: Saves the trained model for future use without retraining.
+Logging: Provides detailed logs of the training process for better debugging and analysis.
+Interactive Visualizations: Creates interactive plots for a more dynamic data exploration.
 ```
 
 >[!IMPORTANT]
