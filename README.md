@@ -4,6 +4,8 @@ This project utilizes XGBoost to predict the closing prices of a specific compan
 ## Description
 The main.py script performs the following tasks:
 
+<img align="right" src="https://i.giphy.com/gutZ5Pm6Xl62eIf5RZ.webp" height="280">
+
 - Imports necessary packages.
 - Loads data from a CSV file.
 - Visualizes the closing price data.
