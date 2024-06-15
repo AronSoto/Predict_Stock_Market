@@ -59,8 +59,10 @@ from sklearn.metrics import precision_score
 
 ## 🚀 Contributing
 
->[!IMPORTANT]
->Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
+> [!NOTE]
+> Contributions are welcome! If you find any issues or have suggestions for improvements.
+>
+> Feel free to open an issue or submit a pull request.
 
 ## <img src="https://i.pinimg.com/originals/9d/d1/a0/9dd1a0c90caa865e3718947e2b91d35e.gif" width="35" align="left">About Me
 
